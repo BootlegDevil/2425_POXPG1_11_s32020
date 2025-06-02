@@ -10,16 +10,19 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
     public GroundChecker GroundChecker;
-
+    public Player_Health healthPlayer;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        healthPlayer = GetComponent<Player_Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(healthPlayer.isDead) return;
+
         float moveInput = Input.GetAxis("Horizontal");
         //Debug.Log($"Input value: {moveInput}");
         if(Input.GetKey(KeyCode.LeftShift))
