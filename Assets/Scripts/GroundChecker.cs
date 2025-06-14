@@ -13,6 +13,7 @@ public class GroundChecker : MonoBehaviour
     {
         isGrounded = true;
         anim.SetBool("IsJumping", false);
+        anim.SetBool("IsFalling", false);
     }
 
     private void OnCollisionExit2D(Collision2D collision)
